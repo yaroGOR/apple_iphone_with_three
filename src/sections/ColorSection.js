@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import gsap from "gsap";
-import React, { Suspense } from "react";
+import React, { Suspense, useContext } from "react";
 import { useRef, useLayoutEffect } from "react";
 import styled from "styled-components";
 
@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { Environment, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Model2 } from "../components/Scene2";
+import { ColorContext } from "../context/ColorContext";
 
 const Section = styled.section`
   width: 100vw;
@@ -49,27 +50,34 @@ const Center = styled.div`
 `;
 
 const ColorSection = () => {
-  const { materials } = useGLTF("/scene.gltf");
 
   const sectionRef = useRef(null);
   const rightRef = useRef(null);
   const leftRef = useRef(null);
   const textRef = useRef(null);
+  const {currentColor, changeColorContext} = useContext(ColorContext)
+useEffect(()=>{
+  let rightElem = rightRef.current;
+  let leftElem = leftRef.current;
+  let textElem = textRef.current;
 
+  textElem.innerText = currentColor.text;
+  textElem.style.color = currentColor.color;
+
+  rightElem.style.backgroundColor = `rgba(${currentColor.rgbColor}, 0.4)`;
+  leftElem.style.backgroundColor = `rgba(${currentColor.rgbColor}, 0.8)`;
+}, [currentColor])
   useLayoutEffect(() => {
     let Elem = sectionRef.current;
-    let rightElem = rightRef.current;
-    let leftElem = leftRef.current;
-    let textElem = textRef.current;
+   
 
     let updateColor = (color, text, rgbColor) => {
-      materials.Body.color.set(color);
-      console.log(materials.Body.color);
-      textElem.innerText = text;
-      textElem.style.color = color;
-
-      rightElem.style.backgroundColor = `rgba(${rgbColor}, 0.4)`;
-      leftElem.style.backgroundColor = `rgba(${rgbColor}, 0.8)`;
+      const colorObj = {
+        color, 
+        text,
+        rgbColor
+    }
+    changeColorContext(colorObj)
     };
 
     // pin the section

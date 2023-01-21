@@ -7,7 +7,7 @@ Source: https://sketchfab.com/3d-models/apple-iphone-13-pro-max-4328dea00e47497d
 Title: Apple iPhone 13 Pro Max
 */
 
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useLayoutEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 
@@ -40,13 +40,7 @@ export function Model(props) {
     .to(scene.rotation, {y:3.14}, 'key1')
     .to(scene.position, {x:0.5}, 'key1')
     .to(scene.position, {x:-0.6}, 'key2')
-    .to(scene.rotation, {y:3.14}, 'key2')
-  
-
-
-
-   
-   
+    .to(scene.rotation, {y:3.14}, 'key2') 
 }, [])
 
   return (
