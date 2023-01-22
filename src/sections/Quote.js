@@ -56,6 +56,23 @@ const Text = styled.p`
     background-image: linear-gradient(-180deg, var(--gradient));
     font-family: var(--fontR);
   }
+  @media   screen and  (max-width: 576px) {
+    width: 70%;
+
+  }
+  
+  @media  screen and  (max-width: 48em) {
+font-size: var(--fontmd);
+height: var(--fontsm);
+  }
+
+  @media  screen and (max-width: 40em) {
+    width: 90%;
+  }
+
+  @media screen and (max-width: 30em) {
+    font-size: var(--fontxs);
+  }
 
 `
 
