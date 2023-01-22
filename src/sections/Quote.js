@@ -12,6 +12,7 @@ const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 `;
 
 const TextContainer = styled.div`

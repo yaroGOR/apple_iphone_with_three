@@ -143,8 +143,8 @@ const DisplaySection = () => {
           scrub: true,
         },
       })
-      .fromTo(textOneRef.current, { x: 0 }, { x: "20%" }, "key1")
-      .fromTo(textTwoRef.current, { x: 0 }, { x: "-20%" }, "key1");
+      .fromTo(textOneRef.current, { x: 0 }, { x: "-20%" }, "key1")
+      .fromTo(textTwoRef.current, { x: 0 }, { x: "20%" }, "key1");
 
     return () => {
       if (tl) tl.kill();

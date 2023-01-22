@@ -8,7 +8,7 @@ const Section = styled.section`
   width: 100vw;
   min-height: 100vh;
   position: relative;
-  z-index: 1;
+  z-index: 5;
   overflow: hidden;
   background-color: var(--white);
 `;
@@ -20,7 +20,7 @@ const Video1 = styled.video`
   height: 100%;
   object-fit: cover;
   object-position: bottom;
-  z-index: 3;
+  z-index: 8;
 `;
 const Video2 = styled.video`
   position: absolute;
@@ -29,7 +29,7 @@ const Video2 = styled.video`
   width: 60%;
   height: auto;
 
-  z-index: 2;
+  z-index: 7;
 
   @media screen and (max-width: 30em) {
     width: 100%;
@@ -39,15 +39,15 @@ const Video2 = styled.video`
 `;
 
 const TitleContainer = styled.div`
-  width: 50%;
-  height: 100%;
+  width: 80%;
+height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 2;
+  z-index: 7;
 
   & > *:nth-child(2) {
     margin-left: 6rem;
@@ -101,8 +101,8 @@ const CameraSection = () => {
         start: "top top",
         end: "bottom+=500 bottom",
         scrub: true,
-        pin: true,
-        pinSpacing: true,
+        pin: false,
+        pinSpacing: false,
       },
     });
 

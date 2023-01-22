@@ -60,7 +60,8 @@ export function Model(props) {
           .to(scene.rotation, { y: 0, z: 0 }, "key2")
           .to(camera.position, { z: 6, x: isDesktop ? -1 : 0 }, "key2")
           .to(scene.rotation, { z: 0, y: 6.3 }, "key3")
-          .to(camera.position, { x: isDesktop ? 0.8 : 0, y: 0 }, "key3");
+          .to(camera.position, { x: isDesktop ? 0.8 : 0, y: 0 }, "key3")
+
 
         if (isMobile) {
           camera.fov = 20;

@@ -1,11 +1,9 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import gsap from "gsap";
 import React, { Suspense, useContext } from "react";
 import { useRef, useLayoutEffect } from "react";
 import styled from "styled-components";
-
 import { useEffect } from "react";
-import { Environment, useGLTF } from "@react-three/drei";
+import { Environment } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Model2 } from "../components/Scene2";
 import { ColorContext } from "../context/ColorContext";
@@ -46,7 +44,7 @@ const Right = styled.div`
 `;
 
 const Center = styled.div`
-  width: 100%;
+  width: 40%;
   text-align: center;
   position: absolute;
   top: 50%;
@@ -68,6 +66,7 @@ const ColorSection = () => {
   const leftRef = useRef(null);
   const textRef = useRef(null);
   const { currentColor, changeColorContext } = useContext(ColorContext);
+
   useEffect(() => {
     let rightElem = rightRef.current;
     let leftElem = leftRef.current;
@@ -79,6 +78,7 @@ const ColorSection = () => {
     rightElem.style.backgroundColor = `rgba(${currentColor.rgbColor}, 0.4)`;
     leftElem.style.backgroundColor = `rgba(${currentColor.rgbColor}, 0.8)`;
   }, [currentColor]);
+
   useLayoutEffect(() => {
     let Elem = sectionRef.current;
 
@@ -100,7 +100,7 @@ const ColorSection = () => {
           start: "top top",
           end: `+=${Elem.offsetWidth + 200}`,
           scrub: true,
-          pinSpacer: true,
+          pinSpacer: false,
         },
       })
       .to(Elem, {
@@ -147,22 +147,18 @@ const ColorSection = () => {
 
   return (
     <Section ref={sectionRef}>
-      <Left ref={leftRef} />
-      {
-        // <Center ref={textRef} />
-      }
+      <Left ref={leftRef}/>
+      <Center ref={textRef}/>
       <Right ref={rightRef}>
         <Canvas id="model" camera={{ fov: 30 }}>
-          <ambientLight intensity={1.25} />
-          <directionalLight position={[1, 0, 0]} intensity={0.4} />
+          <ambientLight intensity={1.25}/>
+          <directionalLight position={[1, 0, 0]} intensity={0.4}/>
           <Suspense fallback={null}>
             <Model2 />
           </Suspense>
-          <Environment preset="night" />
+          <Environment preset="night"/>
         </Canvas>
       </Right>
-
-      <Center ref={textRef} />
     </Section>
   );
 };
