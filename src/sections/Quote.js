@@ -16,6 +16,7 @@ const Section = styled.section`
 `;
 
 const TextContainer = styled.div`
+
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -24,6 +25,7 @@ const TextContainer = styled.div`
   align-items: center;
   background-color: var(--dark);
   color: var(--white);
+  gap:0.5rem;
 `;
 const moveUp = keyframes`
 100%{
@@ -98,27 +100,22 @@ const Quote = () => {
     <Section ref={sectionRef}>
       <TextContainer>
         <Text delay="0s">
-          {" "}
           <span>&#8220; You can't connect the dots looking forward</span>
         </Text>
         <Text delay="0.4s">
-          {" "}
           <span>
             &nbsp;&nbsp;&nbsp;you can only connect them looking backward.
           </span>
         </Text>
         <Text delay="0.8s">
-          {" "}
           <span>&nbsp;&nbsp;&nbsp;so you have to trust that the dots</span>
         </Text>
         <Text delay="1.2s">
-          {" "}
           <span>
             &nbsp;&nbsp;&nbsp;will somehow connect in your future &#8221;
           </span>
         </Text>
         <Text delay="1.6s">
-          {" "}
           <span className="author">&#x23AF; Stewe Jobs</span>
         </Text>
       </TextContainer>
