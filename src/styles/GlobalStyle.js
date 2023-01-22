@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
 
-        outline: 1px solid red;
+       // outline: 1px solid red;
     }
 
     h1, h2, h3, h4, h5, h6 {
