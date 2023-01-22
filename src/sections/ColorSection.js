@@ -27,14 +27,22 @@ const Left = styled.div`
   display: flex;
   background-color: rgba(155, 181, 206, 0.8);
   position: relative;
+
+  @media screen and (max-width: 48em) {
+    width: 100%;
+  }
 `;
 const Right = styled.div`
   width: 50vw;
-  height:100%;
+  height: 100%;
 
   display: flex;
   background-color: rgba(155, 181, 206, 0.4);
   position: relative;
+
+  @media screen and (max-width: 48em) {
+    display: none;
+  }
 `;
 
 const Center = styled.div`
@@ -47,37 +55,40 @@ const Center = styled.div`
   font-size: var(--fontxxl);
   text-transform: uppercase;
   filter: brightness(0.85);
+
+  @media screen and (max-width: 48em) {
+    top: 2rem;
+    transform: translate(-50%, 180%) rotate(0deg);
+  }
 `;
 
 const ColorSection = () => {
-
   const sectionRef = useRef(null);
   const rightRef = useRef(null);
   const leftRef = useRef(null);
   const textRef = useRef(null);
-  const {currentColor, changeColorContext} = useContext(ColorContext)
-useEffect(()=>{
-  let rightElem = rightRef.current;
-  let leftElem = leftRef.current;
-  let textElem = textRef.current;
+  const { currentColor, changeColorContext } = useContext(ColorContext);
+  useEffect(() => {
+    let rightElem = rightRef.current;
+    let leftElem = leftRef.current;
+    let textElem = textRef.current;
 
-  textElem.innerText = currentColor.text;
-  textElem.style.color = currentColor.color;
+    textElem.innerText = currentColor.text;
+    textElem.style.color = currentColor.color;
 
-  rightElem.style.backgroundColor = `rgba(${currentColor.rgbColor}, 0.4)`;
-  leftElem.style.backgroundColor = `rgba(${currentColor.rgbColor}, 0.8)`;
-}, [currentColor])
+    rightElem.style.backgroundColor = `rgba(${currentColor.rgbColor}, 0.4)`;
+    leftElem.style.backgroundColor = `rgba(${currentColor.rgbColor}, 0.8)`;
+  }, [currentColor]);
   useLayoutEffect(() => {
     let Elem = sectionRef.current;
-   
 
     let updateColor = (color, text, rgbColor) => {
       const colorObj = {
-        color, 
+        color,
         text,
-        rgbColor
-    }
-    changeColorContext(colorObj)
+        rgbColor,
+      };
+      changeColorContext(colorObj);
     };
 
     // pin the section
@@ -89,7 +100,7 @@ useEffect(()=>{
           start: "top top",
           end: `+=${Elem.offsetWidth + 200}`,
           scrub: true,
-          pinSpacer: false,
+          pinSpacer: true,
         },
       })
       .to(Elem, {
@@ -151,7 +162,7 @@ useEffect(()=>{
         </Canvas>
       </Right>
 
-      <Center ref={textRef}/>
+      <Center ref={textRef} />
     </Section>
   );
 };

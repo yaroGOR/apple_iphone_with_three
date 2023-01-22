@@ -11,26 +11,22 @@ import ProcessorSection from "./sections/ProcessorSection";
 import Quote from "./sections/Quote";
 import { GlobalStyle } from "./styles/GlobalStyle";
 
-
-
 function App() {
   return (
     <div className="App">
-      <GlobalStyle/>
-      <Quote/>
-      <PhoneModel/>
-
-      <HeroSection/>
-      <DesignSection/>
-      <DisplaySection/>
-      <ProcessorSection/>
-      <BatterySection/>
+      <GlobalStyle />
+      <Quote />
+      <PhoneModel />
+      <HeroSection />
+      <DesignSection />
+      <DisplaySection />
+      <ProcessorSection />
+      <BatterySection />
       <ColorContextProvider>
-       <ColorSection/>
-      <CameraSection/>
-      <PricingSection/>
+        <ColorSection />
+        <CameraSection />
+        <PricingSection />
       </ColorContextProvider>
-     
     </div>
   );
 }

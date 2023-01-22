@@ -1,9 +1,9 @@
-import React from 'react'
-import styled, { keyframes } from 'styled-components'
-import gsap from 'gsap'
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useLayoutEffect } from 'react'
-import { useRef } from 'react'
+import { useLayoutEffect } from "react";
+import { useRef } from "react";
 
 const Section = styled.section`
   width: 100vw;
@@ -56,65 +56,73 @@ const Text = styled.p`
     background-image: linear-gradient(-180deg, var(--gradient));
     font-family: var(--fontR);
   }
-  @media   screen and  (max-width: 576px) {
+  @media screen and (max-width: 576px) {
     width: 70%;
-
-  }
-  
-  @media  screen and  (max-width: 48em) {
-font-size: var(--fontmd);
-height: var(--fontsm);
   }
 
-  @media  screen and (max-width: 40em) {
+  @media screen and (max-width: 48em) {
+    font-size: var(--fontmd);
+    height: var(--fontsm);
+  }
+
+  @media screen and (max-width: 40em) {
     width: 90%;
   }
 
   @media screen and (max-width: 30em) {
     font-size: var(--fontxs);
   }
-
-`
-
+`;
 
 const Quote = () => {
-    const sectionRef = useRef(null);
+  const sectionRef = useRef(null);
 
-    gsap.registerPlugin(ScrollTrigger);
-    useLayoutEffect(()=>{
+  gsap.registerPlugin(ScrollTrigger);
+  useLayoutEffect(() => {
+    let Elem = sectionRef.current;
 
-        let Elem = sectionRef.current;
-        
+    let trigger = ScrollTrigger.create({
+      trigger: Elem,
+      start: "top top",
+      pin: true,
+      pinSpacing: false,
+    });
 
-        let trigger = ScrollTrigger.create({
-            trigger: Elem,
-            start: "top top",
-            pin: true,
-            pinSpacing: false,
-          });
-      
-          return () => {
-            if (trigger) trigger.kill();
-          };
-
-    
-
-    },[])
+    return () => {
+      if (trigger) trigger.kill();
+    };
+  }, []);
 
   return (
     <Section ref={sectionRef}>
-        <TextContainer >
-        <Text delay="0s"> <span>&#8220; You can't connect the dots looking forward</span></Text>
-        <Text delay="0.4s"> <span>&nbsp;&nbsp;&nbsp;you can only connect them looking backward.</span></Text>
-        <Text delay="0.8s"> <span>&nbsp;&nbsp;&nbsp;so you have to trust that the dots</span></Text>
-        <Text delay="1.2s"> <span>&nbsp;&nbsp;&nbsp;will somehow connect in your future &#8221;</span></Text>
-        <Text delay="1.6s"> <span className='author'>&#x23AF; Stewe Jobs</span></Text>
-
-       
-        </TextContainer>
-
+      <TextContainer>
+        <Text delay="0s">
+          {" "}
+          <span>&#8220; You can't connect the dots looking forward</span>
+        </Text>
+        <Text delay="0.4s">
+          {" "}
+          <span>
+            &nbsp;&nbsp;&nbsp;you can only connect them looking backward.
+          </span>
+        </Text>
+        <Text delay="0.8s">
+          {" "}
+          <span>&nbsp;&nbsp;&nbsp;so you have to trust that the dots</span>
+        </Text>
+        <Text delay="1.2s">
+          {" "}
+          <span>
+            &nbsp;&nbsp;&nbsp;will somehow connect in your future &#8221;
+          </span>
+        </Text>
+        <Text delay="1.6s">
+          {" "}
+          <span className="author">&#x23AF; Stewe Jobs</span>
+        </Text>
+      </TextContainer>
     </Section>
-  )
-}
+  );
+};
 
-export default Quote
+export default Quote;

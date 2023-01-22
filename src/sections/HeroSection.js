@@ -10,6 +10,8 @@ const Section = styled.div`
 
   background-color: var(--dark);
   overflow: hidden;
+  justify-content: flex-end;
+  align-items: center;
 `;
 
 const Title = styled.h1`
@@ -20,6 +22,14 @@ const Title = styled.h1`
   font-size: var(--fontlg);
   font-family: var(--fontL);
   color: var(--greyLight);
+
+  @media screen and (max-width: 48em) {
+    font-size: var(--fontmd);
+    color: var(--white);
+  }
+  @media screen and (max-width: 30em) {
+    width: 70%;
+  }
 `;
 const TextContainer = styled.div`
   width: 100%;
@@ -35,11 +45,32 @@ const TextContainer = styled.div`
   -webkit-text-fill-color: transparent;
   z-index: 1;
 
+  @media screen and (max-width: 48em) {
+    flex-direction: column;
+    background-image: linear-gradient(90deg, var(--gradient));
+    align-items: flex-start;
+    filter: brightness(1.1);
+
+    & > *:last-child {
+      align-self: flex-end;
+    }
+    height: 60vh;
+    padding: 0 1rem;
+  }
+
   span {
     font-size: var(--fontxxxl);
     text-transform: uppercase;
     font-weight: 600;
     padding: 2rem;
+
+    @media screen and (max-width: 64em) {
+      font-size: var(--fontxxl);
+      padding: 0;
+    }
+    @media screen and (max-width: 48em) {
+      font-size: var(--fontxl);
+    }
   }
 `;
 const VideoContainer = styled.div`
