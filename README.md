@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+One-page, responsive website with beautiful three.js effects and gsap animations. 
 
-## Available Scripts
+Demo:
 
-In the project directory, you can run:
+[https://velvety-cupcake-a311fa.netlify.app](https://velvety-cupcake-a311fa.netlify.app/)
 
+# Technologies
+
+HTML
+
+CSS
+
+JavaScript
+
+React
+
+react hooks: useContext — as state manages, useState, useRef, useEffect …
+
+styled-components,
+
+react-three-fiber
+
+gasp
+
+# ScreenShots
+<img width="2024" alt="Снимок экрана 2023-02-01 в 14 38 52" src="https://user-images.githubusercontent.com/36842297/216047185-41f87408-173f-41d2-9d7c-c5f95be54640.png">
+<img width="2027" alt="Снимок экрана 2023-02-01 в 14 38 35" src="https://user-images.githubusercontent.com/36842297/216047226-0d510215-92c2-4027-8146-9b4e361e63d1.png">
+<img width="2028" alt="Снимок экрана 2023-02-01 в 14 38 27" src="https://user-images.githubusercontent.com/36842297/216047283-ea09040e-7ba3-4ab1-83c8-8c60424143e8.png">
+<img width="1999" alt="Снимок экрана 2023-02-01 в 14 38 20" src="https://user-images.githubusercontent.com/36842297/216047299-3178c52c-b95c-46dc-887a-90c1adc862db.png">
+<img width="2033" alt="Снимок экрана 2023-02-01 в 14 38 09" src="https://user-images.githubusercontent.com/36842297/216047322-75b916e4-5f47-4967-bfc6-b7df9f187c22.png">
+<img width="2014" alt="Снимок экрана 2023-02-01 в 14 37 59" src="https://user-images.githubusercontent.com/36842297/216047380-21c2c865-8704-49be-977c-acb8ec8e5971.png">
+<img width="2026" alt="Снимок экрана 2023-02-01 в 14 37 47" src="https://user-images.githubusercontent.com/36842297/216047424-72e379f4-b0f5-411e-b530-05ada0a77f8a.png">
+<img width="2029" alt="Снимок экрана 2023-02-01 в 14 37 36" src="https://user-images.githubusercontent.com/36842297/216047445-697381f5-5de6-4440-8788-140e39c84b71.png">
+
+
+# Install
+
+clone this repo with 
+### `git repo clone yaroGOR/apple_iphone_with_three`
+and then run 
+### `npm insatall ` 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
