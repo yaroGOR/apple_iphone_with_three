@@ -40,6 +40,6 @@ gasp
 clone this repo with 
 ### `git repo clone yaroGOR/apple_iphone_with_three`
 and then run 
-### `npm insatall ` 
+### `npm install ` 
 ### `npm start`
 
